@@ -1,5 +1,5 @@
 # COMP0124 Coursework: Efficient Social Attention for Autonomous Decision-Making in Varing Traffic Scenarios
-This repository contains the source code for coursework paper: Efficient Social Attention for Autonomous Decision-Making in Varing Traffic Scenarios. Thr experiment environment is forked from: [HighwayEnv](https://github.com/Farama-Foundation/HighwayEnv) and [rl-agents](https://github.com/eleurent/rl-agents).  We modify the code to diploy our proposed method.
+This repository contains the source code for coursework paper: Efficient Social Attention for Autonomous Decision-Making in Varing Traffic Scenarios. The experiment environment is forked from: [HighwayEnv](https://github.com/Farama-Foundation/HighwayEnv) and [rl-agents](https://github.com/eleurent/rl-agents).  We modify the code to diploy our proposed method.
 ## Authors
 He Liang, &nbsp;&nbsp;Jianheng Liu, &nbsp;&nbsp;Yunfan Shi
 ## Modified Code
@@ -34,6 +34,8 @@ He Liang, &nbsp;&nbsp;Jianheng Liu, &nbsp;&nbsp;Yunfan Shi
 │   │   │   │   │   ├── DQNAgent
 │   │   │   │   │   │   ├── ego_attention_2h.json
 ```
+## Results
+The raw data and visualisations of the experiments can be found in the `\experiments` folder.
 
 
 
