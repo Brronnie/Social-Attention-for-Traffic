@@ -34,7 +34,8 @@ He Liang, &nbsp;&nbsp;Jianheng Liu, &nbsp;&nbsp;Yunfan Shi
 │   │   │   │   │   ├── DQNAgent
 │   │   │   │   │   │   ├── ego_attention_2h.json
 ```
-
+## Results
+The raw data and visualisations of the experiments can be found in the '\experiments' folder.
 
 
 
