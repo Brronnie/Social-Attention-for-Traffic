@@ -5,6 +5,7 @@
         "layers": [256, 256]
     },
     "double": false,
+    "alpha": 0.3,
     "loss_function": "l2",
     "optimizer": {
         "lr": 5e-4

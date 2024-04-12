@@ -1,4 +1,5 @@
 {
     "base_config": "configs/HighwayEnv/agents/DQNAgent/dqn.json",
-    "double": true
+    "double": true,
+    "alpha": 0.3
 }

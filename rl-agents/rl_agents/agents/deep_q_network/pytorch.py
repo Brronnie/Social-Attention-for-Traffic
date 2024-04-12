@@ -1,5 +1,6 @@
 import logging
 import torch
+import torch.nn as nn
 from gymnasium import spaces
 
 from rl_agents.agents.common.memory import Transition
@@ -19,13 +20,21 @@ class DQNAgent(AbstractDQNAgent):
         self.target_net = model_factory(self.config["model"])
         self.target_net.load_state_dict(self.value_net.state_dict())
         self.target_net.eval()
+
+        self.alpha = nn.Parameter(torch.tensor(config.get("alpha_initial_value", 0.1)))  # trainable alpha
+        self.alpha.data.clamp_(0, 1)  # limit alpha within [0, 1] 
+
         logger.debug("Number of trainable parameters: {}".format(trainable_parameters(self.value_net)))
         self.device = choose_device(self.config["device"])
         self.value_net.to(self.device)
         self.target_net.to(self.device)
         self.loss_function = loss_function_factory(self.config["loss_function"])
+        # self.optimizer = optimizer_factory(self.config["optimizer"]["type"],
+        #                                    self.value_net.parameters(),
+        #                                    **self.config["optimizer"])
+        # add trainable alpha in optimizer
         self.optimizer = optimizer_factory(self.config["optimizer"]["type"],
-                                           self.value_net.parameters(),
+                                           list(self.value_net.parameters()) + [self.alpha],
                                            **self.config["optimizer"])
         self.steps = 0
 
@@ -36,6 +45,7 @@ class DQNAgent(AbstractDQNAgent):
         for param in self.value_net.parameters():
             param.grad.data.clamp_(-1, 1)
         self.optimizer.step()
+        self.alpha.data.clamp_(0,1) # make sure its still within [0,1]
 
     def compute_bellman_residual(self, batch, target_state_action_value=None):
         # Compute concatenate the batch elements
@@ -68,8 +78,15 @@ class DQNAgent(AbstractDQNAgent):
                 # Compute the expected Q values
                 target_state_action_value = batch.reward + self.config["gamma"] * next_state_values
 
+        # Now calculate updated Q values using the learnable alpha parameter
+        updated_Q_values = (1 - self.alpha) * state_action_values + \
+                        self.alpha * target_state_action_value
+
         # Compute loss
-        loss = self.loss_function(state_action_values, target_state_action_value)
+        loss = self.loss_function(updated_Q_values, target_state_action_value)
+
+        # # Compute loss
+        # loss = self.loss_function(state_action_values, target_state_action_value)
         return loss, target_state_action_value, batch
 
     def get_batch_state_values(self, states):

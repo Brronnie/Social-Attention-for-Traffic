@@ -204,6 +204,7 @@ class SelfAttention(BaseModule, Configurable):
         self.key_all = nn.Linear(self.config["feature_size"], self.config["feature_size"], bias=False)
         self.query_all = nn.Linear(self.config["feature_size"], self.config["feature_size"], bias=False)
         self.attention_combine = nn.Linear(self.config["feature_size"], self.config["feature_size"], bias=False)
+        self.maskW = nn.Linear(self.config["feature_size"], self.config["feature_size"], bias=False)
 
     @classmethod
     def default_config(cls):
@@ -220,7 +221,7 @@ class SelfAttention(BaseModule, Configurable):
         # Dimensions: Batch, entity, head, feature_per_head
         key_all = self.key_all(input_all).view(batch_size, n_entities, self.config["heads"], self.features_per_head)
         value_all = self.value_all(input_all).view(batch_size, n_entities, self.config["heads"], self.features_per_head)
-        query_all = self.query_all(input_all).view(batch_size, n_entities, self.config["heads"], self.features_per_head)
+        query_all = self.maskW(self.query_all(input_all)).view(batch_size, n_entities, self.config["heads"], self.features_per_head)
 
         # Dimensions: Batch, head, entity, feature_per_head
         key_all = key_all.permute(0, 2, 1, 3)
