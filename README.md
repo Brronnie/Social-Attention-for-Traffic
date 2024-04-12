@@ -2,7 +2,7 @@
 This repository contains the source code for coursework 3. The objective of this coursework is to perform pick and place tasks in Gazebo, using MoveIt!
 to move the robot and PCL to detect object positions and colours
 ## Authors
-He Liang&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jianheng Liu&nbsp;&nbsp;&nbsp;&nbsp;Yunfan Shi
+He Liang, &nbsp;&nbsp;Jianheng Liu, &nbsp;&nbsp;Yunfan Shi
 ## Code Directory Structure
 ```
 ├── cw1_team_7
