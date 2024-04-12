@@ -1,6 +1,5 @@
 # COMP0124 Coursework: Efficient Social Attention for Autonomous Decision-Making in Varing Traffic Scenarios
-This repository contains the source code for coursework 3. The objective of this coursework is to perform pick and place tasks in Gazebo, using MoveIt!
-to move the robot and PCL to detect object positions and colours
+This repository contains the source code for coursework paper: Efficient Social Attention for Autonomous Decision-Making in Varing Traffic Scenarios. Thr experiment environment is forked from: [HighwayEnv](https://github.com/Farama-Foundation/HighwayEnv) and [rl-agents](https://github.com/eleurent/rl-agents).  We modify the code to diploy our proposed method.
 ## Authors
 He Liang, &nbsp;&nbsp;Jianheng Liu, &nbsp;&nbsp;Yunfan Shi
 ## Code Directory Structure
@@ -63,12 +62,6 @@ Then the issue should be fixed.
 </p>
 
 
-
-
-## Task Contribution
-**Task 1**: **8** hours -- Liu (30%), Wei (40%), Liang (30%)  
-**Task 2**: **14** hours -- Liu (30%), Wei (40%), Liang (30%)  
-**Task 3**: **38** hours -- Liu (40%), Wei (30%), Liang (30%)
 
 ## License
 Code: [MIT License](LICENSE)
