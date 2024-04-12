@@ -1,10 +1,8 @@
-# COMP0129 Coursework 3: Pick and Place, Object Detection and Localization
+# COMP0124 Coursework: Efficient Social Attention for Autonomous Decision-Making in Varing Traffic Scenarios
 This repository contains the source code for coursework 3. The objective of this coursework is to perform pick and place tasks in Gazebo, using MoveIt!
 to move the robot and PCL to detect object positions and colours
 ## Authors
-Jianheng Liu&nbsp;&nbsp;&nbsp;&nbsp;SID: 23070140&nbsp;&nbsp;&nbsp;&nbsp;E-mail: jianheng.liu.23@ucl.ac.uk  
-Wenting Wei&nbsp;&nbsp;&nbsp;&nbsp;SID:23138693&nbsp;&nbsp;&nbsp;&nbsp;E-mail: wenting.wei.23@ucl.ac.uk  
-He Liang&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SID: 23102191&nbsp;&nbsp;&nbsp;&nbsp;E-mail: he.liang.23@ucl.ac.uk
+He Liang&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jianheng Liu&nbsp;&nbsp;&nbsp;&nbsp;Yunfan Shi
 ## Code Directory Structure
 ```
 ├── cw1_team_7
