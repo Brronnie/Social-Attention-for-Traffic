@@ -2,7 +2,12 @@
 This repository contains the source code for coursework paper: Efficient Social Attention for Autonomous Decision-Making in Varing Traffic Scenarios. The experiment environment is forked from: [HighwayEnv](https://github.com/Farama-Foundation/HighwayEnv) and [rl-agents](https://github.com/eleurent/rl-agents).  We modify the code to diploy our proposed method.
 ## Authors
 He Liang, &nbsp;&nbsp;Jianheng Liu, &nbsp;&nbsp;Yunfan Shi
-## Modified Code
+
+## Run the Code
+To run the code, you may follow the instruction in `.\example.ipynb`.
+
+## Modified Code Files
+The code files we modified are as follows, which contain the implementation of our proposed method.
 ```
 ├── rl-agents
 │   ├── rl_agents
@@ -35,7 +40,7 @@ He Liang, &nbsp;&nbsp;Jianheng Liu, &nbsp;&nbsp;Yunfan Shi
 │   │   │   │   │   │   ├── ego_attention_2h.json
 ```
 ## Results
-The raw data and visualisations of the experiments can be found in the `\experiments` folder.
+The raw data and visualisations of the experiments can be found in the `.\experiments` folder.
 
 
 
